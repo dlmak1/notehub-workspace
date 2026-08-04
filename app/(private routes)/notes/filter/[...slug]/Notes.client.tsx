@@ -22,7 +22,7 @@ export default function NotesClient({ tag }: NotesClientProps) {
   const requestTag = tag === "all" ? undefined : tag;
 
   const { data, isFetching, isSuccess } = useQuery({
-    queryKey: ["notes", search, page, tag],
+    queryKey: ["notes", search, page, requestTag],
     queryFn: () => fetchNotes({ page, search, tag: requestTag }),
     placeholderData: keepPreviousData,
     refetchOnMount: false,

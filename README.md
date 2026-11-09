@@ -32,17 +32,17 @@ A modern personal notes workspace built with **Next.js, React, and TypeScript**.
 
 | Path | Purpose |
 | --- | --- |
-| \`/\` | Landing page |
-| \`/sign-up\` | Create an account |
-| \`/sign-in\` | Sign in |
-| \`/notes/filter/all\` | Notes workspace (requires sign-in) |
-| \`/notes/filter/[tag]\` | Filter notes by category |
-| \`/profile\` | Account details (requires sign-in) |
-| \`/profile/edit\` | Update account information |
+| `/` | Landing page |
+| `/sign-up` | Create an account |
+| `/sign-in` | Sign in |
+| `/notes/filter/all` | Notes workspace (requires sign-in) |
+| `/notes/filter/[tag]` | Filter notes by category |
+| `/profile` | Account details (requires sign-in) |
+| `/profile/edit` | Update account information |
 
 ## How it works
 
-The browser talks to **Next.js API route handlers**, which forward requests to the external NoteHub API at \`https://notehub-api.goit.study\`. Authentication uses cookies and session-refresh logic; protected pages redirect unauthenticated visitors to sign-in.
+The browser talks to **Next.js API route handlers**, which forward requests to the external NoteHub API at `https://notehub-api.goit.study`. Authentication uses cookies and session-refresh logic; protected pages redirect unauthenticated visitors to sign-in.
 
 The landing page includes an **illustrative preview**: the example notes there are static design content and are not loaded from a real user account.
 
@@ -50,30 +50,30 @@ The landing page includes an **illustrative preview**: the example notes there a
 
 **Requirements:** Node.js 20.9+ and npm.
 
-\`\`\`bash
+```bash
 git clone https://github.com/dlmak1/09-auth.git
 cd 09-auth
 npm ci
 npm run dev
-\`\`\`
+```
 
 Open [http://localhost:3000](http://localhost:3000). Register or sign in to access your private notes.
 
-No app-specific environment variables are currently required in this repository. The backend URL is configured in \`app/api/api.ts\`. **An internet connection and a working external GoIT API are required** for authentication and note operations.
+No app-specific environment variables are currently required in this repository. The backend URL is configured in `app/api/api.ts`. **An internet connection and a working external GoIT API are required** for authentication and note operations.
 
 ## Scripts
 
 | Script | Purpose |
 | --- | --- |
-| \`npm run dev\` | Start development server |
-| \`npm run build\` | Production build |
-| \`npm run start\` | Start production server |
-| \`npm run lint\` | ESLint checks |
-| \`npm run format\` | Format files with Prettier |
+| `npm run dev` | Start development server |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run lint` | ESLint checks |
+| `npm run format` | Format files with Prettier |
 
 ## Project structure
 
-\`\`\`text
+```text
 app/
   (auth routes)/      # Sign-in and sign-up
   (private routes)/   # Protected notes and profile screens
@@ -85,7 +85,7 @@ lib/
   store/              # Zustand stores
 proxy.ts              # Route access and session handling
 types/                # Shared TypeScript types
-\`\`\`
+```
 
 ## Roadmap
 

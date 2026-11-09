@@ -8,6 +8,17 @@ A modern personal notes workspace built with **Next.js, React, and TypeScript**.
 
 > NoteHub uses the public GoIT NoteHub API for authentication and note storage. This repository contains the Next.js application and its server-side API proxy, **not** a self-hosted database or a custom backend service.
 
+## My Contributions
+
+**Role:** Individual Learning Project · Frontend Developer
+
+- Developed a personal notes application with note creation, deletion, search, category filtering, and pagination using **Next.js, React, and TypeScript**.
+- Implemented registration, sign-in, sign-out, session checks and refresh, and protected routes using **Next.js API route handlers**, cookies, and a proxy to the external **GoIT NoteHub API**.
+- Integrated **Zustand** for authentication state and persisted note drafts, and **TanStack Query** for server-state data fetching; developed user profile viewing and editing pages.
+- Redesigned the responsive landing page and implemented shared navigation and form components.
+
+**Architecture:** Notes and authentication are handled by the public GoIT API, not a custom independently hosted backend.
+
 ## Features
 
 - **Authentication:** registration, sign-in, sign-out, session checks, and refresh handling.

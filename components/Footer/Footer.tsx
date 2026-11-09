@@ -1,17 +1,19 @@
+import Link from "next/link";
 import css from "./Footer.module.css";
 
 export default function Footer() {
   return (
     <footer className={css.footer}>
       <div className={css.content}>
-        <p>© {new Date().getFullYear()} NoteHub. All rights reserved.</p>
-        <div className={css.wrap}>
-          <p>Developer: Dmytro</p>
-          <p>
-            Contact us:{" "}
-            <a href="mailto:student@notehub.app">student@notehub.app</a>
-          </p>
-        </div>
+        <Link href="/" className={css.brand}>NoteHub</Link>
+        <p>A place for your ideas — a portfolio project by Dmytro Severyn.</p>
+        <a
+          href="https://github.com/dlmak1/09-auth"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View source on GitHub ↗
+        </a>
       </div>
     </footer>
   );

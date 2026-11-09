@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NoteHub — Personal Notes Workspace
 
-## Getting Started
+A modern personal notes workspace built with **Next.js, React, and TypeScript**. Create an account, sign in, capture thoughts, and organize your notes in one place.
 
-First, run the development server:
+**Project type:** Individual learning / portfolio project  
+**Developer:** [Dmytro Severyn](https://github.com/dlmak1)
 
-```bash
+> NoteHub uses the public GoIT NoteHub API for authentication and note storage. This repository contains the Next.js application and its server-side API proxy, **not** a self-hosted database or a custom backend service.
+
+## Features
+
+- **Authentication:** registration, sign-in, sign-out, session checks, and refresh handling.
+- **Protected routes:** access control for notes and profile pages using the Next.js proxy.
+- **Notes:** view, create, and delete notes with category tags.
+- **Discoverability:** search, tag filtering, and pagination.
+- **Draft recovery:** note drafts are stored locally with Zustand persistence.
+- **Profile:** view account information and edit a username.
+- **Thoughtful UI:** responsive layout, loading and empty states, and accessible form labels.
+
+## Tech stack
+
+| Area | Technologies |
+| --- | --- |
+| Framework | Next.js 16 (App Router), React 19, TypeScript |
+| State | Zustand, TanStack Query |
+| Forms | Formik, Yup |
+| Requests | Axios, Next.js route handlers |
+| Styling | CSS Modules, modern-normalize |
+| Other | React Hot Toast, react-paginate, use-debounce |
+
+## App routes
+
+| Path | Purpose |
+| --- | --- |
+| \`/\` | Landing page |
+| \`/sign-up\` | Create an account |
+| \`/sign-in\` | Sign in |
+| \`/notes/filter/all\` | Notes workspace (requires sign-in) |
+| \`/notes/filter/[tag]\` | Filter notes by category |
+| \`/profile\` | Account details (requires sign-in) |
+| \`/profile/edit\` | Update account information |
+
+## How it works
+
+The browser talks to **Next.js API route handlers**, which forward requests to the external NoteHub API at \`https://notehub-api.goit.study\`. Authentication uses cookies and session-refresh logic; protected pages redirect unauthenticated visitors to sign-in.
+
+The landing page includes an **illustrative preview**: the example notes there are static design content and are not loaded from a real user account.
+
+## Run locally
+
+**Requirements:** Node.js 20.9+ and npm.
+
+\`\`\`bash
+git clone https://github.com/dlmak1/09-auth.git
+cd 09-auth
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Register or sign in to access your private notes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+No app-specific environment variables are currently required in this repository. The backend URL is configured in \`app/api/api.ts\`. **An internet connection and a working external GoIT API are required** for authentication and note operations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Script | Purpose |
+| --- | --- |
+| \`npm run dev\` | Start development server |
+| \`npm run build\` | Production build |
+| \`npm run start\` | Start production server |
+| \`npm run lint\` | ESLint checks |
+| \`npm run format\` | Format files with Prettier |
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+\`\`\`text
+app/
+  (auth routes)/      # Sign-in and sign-up
+  (private routes)/   # Protected notes and profile screens
+  api/                # Next.js API proxy routes
+  page.tsx            # Public landing page
+components/           # Shared UI components
+lib/
+  api/                # Client and server API functions
+  store/              # Zustand stores
+proxy.ts              # Route access and session handling
+types/                # Shared TypeScript types
+\`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Roadmap
 
-## Deploy on Vercel
+- Add an online demo deployment and screenshots.
+- Improve automated test coverage and accessibility checks.
+- Replace assignment-provided social preview URLs with an original project graphic.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built by **[Dmytro Severyn](https://github.com/dlmak1)** as part of frontend/fullstack learning.

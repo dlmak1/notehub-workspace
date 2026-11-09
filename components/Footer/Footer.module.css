@@ -1,26 +1,18 @@
-/* components/Footer.module.css */
-
 .footer {
-  padding: 20px;
-  background-color: #f0f0f0;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-  border-top: 1px solid #ddd;
+  padding: 30px clamp(22px, 6vw, 84px);
+  background: #171328;
+  color: #bdb7d4;
 }
-
-.wrap {
+.content {
+  max-width: 1320px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px 26px;
+  flex-wrap: wrap;
 }
-
-.footer a {
-  color: #0d6efd;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
+.content p { margin: 0; font-size: 12px; line-height: 1.5; }
+.content a { font-size: 13px; color: #ddd1ff; font-weight: 750; }
+.content a:hover { color: white; text-decoration: underline; }
+.brand { font-size: 17px !important; letter-spacing: -.03em; }

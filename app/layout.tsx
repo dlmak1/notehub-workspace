@@ -16,22 +16,13 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "NoteHub",
-  description: "A simple and efficient application for managing personal notes",
-  openGraph: {
-    title: "NoteHub",
-    description:
-      "A simple and efficient application for managing personal notes",
-    url: "https://notehub.com/",
-    images: [
-      {
-        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
-        width: 1200,
-        height: 630,
-        alt: "NoteHub",
-      },
-    ],
+  title: {
+    default: "NoteHub | Personal Notes Workspace",
+    template: "%s | NoteHub",
   },
+  description:
+    "Keep your notes organized in one place. Create an account, save ideas, search notes, and organize everything with tags.",
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

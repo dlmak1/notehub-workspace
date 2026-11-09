@@ -4,6 +4,7 @@ A modern personal notes workspace built with **Next.js, React, and TypeScript**.
 
 **Project type:** Individual learning / portfolio project  
 **Developer:** [Dmytro Severyn](https://github.com/dlmak1)
+**Live Demo:** [Open NoteHub](https://09-auth-snowy-seven.vercel.app/)
 
 > NoteHub uses the public GoIT NoteHub API for authentication and note storage. This repository contains the Next.js application and its server-side API proxy, **not** a self-hosted database or a custom backend service.
 
@@ -51,8 +52,8 @@ The landing page includes an **illustrative preview**: the example notes there a
 **Requirements:** Node.js 20.9+ and npm.
 
 ```bash
-git clone https://github.com/dlmak1/09-auth.git
-cd 09-auth
+git clone https://github.com/dlmak1/notehub-workspace.git
+cd notehub-workspace
 npm ci
 npm run dev
 ```
@@ -89,7 +90,7 @@ types/                # Shared TypeScript types
 
 ## Roadmap
 
-- Add an online demo deployment and screenshots.
+- Add screenshots of the deployed application.
 - Improve automated test coverage and accessibility checks.
 - Replace assignment-provided social preview URLs with an original project graphic.
 
